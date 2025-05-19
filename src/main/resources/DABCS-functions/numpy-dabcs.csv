@@ -1,0 +1,58 @@
+id,path,dabc_msg,dabc_url,version,fqn,dabc_module,reason,effect
+0,/numpy/ma/core.py,"Previously, the default was documented to be -1, but that was in error. At some future date, the default will change to -1, as originally intended. Until then, the axis should be given explicitly when ``arr.ndim > 1``, to avoid a FutureWarning.",https://github.com/numpy/numpy/blob/v1.24.3/numpy/ma/core.py#L5507,1.13.0,"class: MaskedArrayFutureWarning(FutureWarning)
+
+method: def argsort(
+        self,
+        axis=np._NoValue,
+        kind=None,
+        order=None,
+        endwith=True,
+        fill_value=None
+    )
+
+param: axis : int, default np._NoValue",Masked Arrays,Maintainability,Behavior
+1,/numpy/lib/npyio.py,Made default False in response to CVE-2019-6446.,https://github.com/numpy/numpy/blob/v1.24.3/numpy/lib/npyio.py#L135,1.16.3,"class: NpzFile(Mapping)
+
+method: def __init__(
+        self,
+        fid,
+        own_fid=False,
+        allow_pickle=False,
+        pickle_kwargs=None, *,
+        max_header_size=format._MAX_HEADER_SIZE)
+    )
+
+param: allow_pickle: bool, default False",General Functions,Bug Fixing,Behavior
+2,/numpy/lib/npyio.py,Made default False in response to CVE-2019-6446.,https://github.com/numpy/numpy/blob/v1.24.3/numpy/lib/npyio.py#L135,1.16.3,"class: NpzFile(Mapping)
+
+method: def load(
+        file,
+        mmap_mode=None,
+        allow_pickle=False,
+        fix_imports=True,
+        encoding='ASCII',
+        *,
+        max_header_size=format._MAX_HEADER_SIZE
+    )
+
+param: allow_pickle: bool, default False",General Functions,Bug Fixing,Behavior
+3,/numpy/lib/format.py,Made default False in response to CVE-2019-6446.,https://github.com/numpy/numpy/blob/v1.24.3/numpy/lib/format.py#L743,1.16.3,"class: NA
+
+method: def read_array(
+        fp,
+        allow_pickle=False,
+        pickle_kwargs=None,
+        *,
+        max_header_size=_MAX_HEADER_SIZE
+    )
+
+param: allow_pickle : bool, default False",General Functions,Bug Fixing,Behavior
+4,/numpy/linalg/linalg.py,"If not set, a FutureWarning is given. The previous default of ``-1`` will use the machine precision as `rcond` parameter, the new default will use the machine precision times `max(M, N)`. To silence the warning and use the new default, use ``rcond=None``, to keep using the old behavior, use ``rcond=-1``",https://github.com/numpy/numpy/blob/v1.24.3/numpy/linalg/linalg.py#L2178,1.14.0,"class: NA
+
+method: def lstsq(
+        a,
+        b,
+        rcond=""warn""
+    )
+
+param: rcond : float, default ""warn""",Linear Algebra,API Compatibility,Performance

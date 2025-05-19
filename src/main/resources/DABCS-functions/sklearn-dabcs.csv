@@ -1,0 +1,1366 @@
+id,path,dabc_msg,dabc_url,version,fqn,dabc_module,reason,effect
+0,/sklearn/multiclass.py,`n_jobs` default changed from 1 to None,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/multiclass.py#L225,0.20,"class: OneVsRestClassifier(
+    MultiOutputMixin, ClassifierMixin, MetaEstimatorMixin, BaseEstimator
+):
+
+method: __init__(self, estimator, *, n_jobs=None, verbose=0):
+
+param:  n_jobs : int, default=None",Model Training,Maintainability,Performance
+10,/sklearn/calibration.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/calibration.py#L114,0.22,"class: CalibratedClassifierCV(ClassifierMixin, MetaEstimatorMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        base_estimator=None,
+        *,
+        method=""sigmoid"",
+        cv=None,
+        n_jobs=None,
+        ensemble=True,
+    ):
+
+param: cv : int, cross-validation generator, iterable or ""prefit"", \
+            default=None",Model Training,Maintainability,Behavior
+26,/sklearn/multioutput.py,`n_jobs` default changed from `1` to `None`.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/multioutput.py#L271,0.20,"class: MultiOutputRegressor(RegressorMixin, _MultiOutputEstimator):
+
+method: __init__(self, estimator, *, n_jobs=None):
+
+param: n_jobs : int or None, optional (default=None)",Model Training,Maintainability,Performance
+29,/sklearn/multioutput.py,`n_jobs` default changed from `1` to `None`.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/multioutput.py#L364,0.20,"class: MultiOutputClassifier(ClassifierMixin, _MultiOutputEstimator):
+
+method: __init__(self, estimator, *, n_jobs=None):
+
+param: n_jobs : int or None, optional (default=None)",Model Training,Maintainability,Performance
+110,/sklearn/pipeline.py,Deprecated `None` as a transformer in favor of 'drop',https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/pipeline.py#L915,0.22,"class: FeatureUnion(TransformerMixin, _BaseComposition):
+
+method: __init__(
+        self, transformer_list, *, n_jobs=None, transformer_weights=None, verbose=False
+    ):
+
+param: transformer_list : list of (str, transformer) tuples",pipeline,Maintainability,Performance
+111,/sklearn/pipeline.py,`n_jobs` default changed from 1 to None,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/pipeline.py#L924,v0.20,"class: FeatureUnion(TransformerMixin, _BaseComposition):
+
+method: __init__(
+        self, transformer_list, *, n_jobs=None, transformer_weights=None, verbose=False
+    ):
+
+param: n_jobs : int, default=None",pipeline,,Refactoring
+113,/sklearn/pipeline.py,`n_jobs` default changed from 1 to None,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/pipeline.py#L1264,v0.20,"class: NA
+
+method: make_union(*transformers, n_jobs=None, verbose=False):
+
+param: n_jobs : int, default=None",pipeline,Maintainability,Performance
+123,/sklearn/_config.py,Default changed from False to True.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/_config.py#L169,0.23,"class: NA
+
+method: def config_context(
+    *,
+    assume_finite=None,
+    working_memory=None,
+    print_changed_only=None,
+    display=None,
+    pairwise_dist_chunk_size=None,
+    enable_cython_pairwise_dist=None,
+):
+
+param:  print_changed_only : bool, default=None",Others,,Aesthetics
+134,/sklearn/dummy.py,"The default value of `strategy` has changed to ""prior"" in version
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/dummy.py#L75,0.24,"class: DummyClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimator):
+
+method: __init__(self, *, strategy=""prior"", random_state=None, constant=None):
+
+param: strategy : {""most_frequent"", ""prior"", ""stratified"", ""uniform"", \
+            ""constant""}, default=""prior""",Model Training,API simplification,Behavior
+165,/sklearn/covariance/_graph_lasso.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/covariance/_graph_lasso.py#L645,0.20,"class: GraphicalLassoCV(GraphicalLasso):
+
+method: __init__(
+        self,
+        *,
+        alphas=4,
+        n_refinements=4,
+        cv=None,
+        tol=1e-4,
+        enet_tol=1e-4,
+        max_iter=100,
+        mode=""cd"",
+        n_jobs=None,
+        verbose=False,
+        assume_centered=False,
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Data Analysis,Maintainability,Behavior
+166,/sklearn/covariance/_graph_lasso.py,`n_jobs` default changed from 1 to None,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/covariance/_graph_lasso.py#L673,v0.20,"class: GraphicalLassoCV(GraphicalLasso):
+
+method: __init__(
+        self,
+        *,
+        alphas=4,
+        n_refinements=4,
+        cv=None,
+        tol=1e-4,
+        enet_tol=1e-4,
+        max_iter=100,
+        mode=""cd"",
+        n_jobs=None,
+        verbose=False,
+        assume_centered=False,
+    ):
+
+param: n_jobs : int, default=None",Data Analysis,Maintainability,Performance
+202,/sklearn/tree/_classes.py,"The default of `max_features` changed from `""auto""` to `""sqrt""`.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/tree/_classes.py#L1460,1.1,"class: ExtraTreeClassifier(DecisionTreeClassifier):
+
+method: __init__(
+        self,
+        *,
+        criterion=""gini"",
+        splitter=""random"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=""sqrt"",
+        random_state=None,
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        class_weight=None,
+        ccp_alpha=0.0,
+    ):
+
+param: max_features : int, float, {""auto"", ""sqrt"", ""log2""} or None, default=""sqrt""",Model Training,Maintainability,Refactoring
+215,/sklearn/tree/_classes.py,"The default of `max_features` changed from `""auto""` to `1.0`.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/tree/_classes.py#L1740,1.1,"class: ExtraTreeRegressor(DecisionTreeRegressor):
+
+method: __init__(
+        self,
+        *,
+        criterion=""squared_error"",
+        splitter=""random"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=1.0,
+        random_state=None,
+        min_impurity_decrease=0.0,
+        max_leaf_nodes=None,
+        ccp_alpha=0.0,
+    ):
+
+param: max_features : int, float, {""auto"", ""sqrt"", ""log2""} or None, default=1.0",Model Training,Maintainability,Refactoring
+223,/sklearn/tree/_export.py,"Default of out_file changed from ""tree.dot"" to None.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/tree/_export.py#L783,0.20,"class: NA
+
+method: def export_graphviz(
+    decision_tree,
+    out_file=None,
+    *,
+    max_depth=None,
+    feature_names=None,
+    class_names=None,
+    label=""all"",
+    filled=False,
+    leaves_parallel=False,
+    impurity=True,
+    node_ids=False,
+    proportion=False,
+    rotate=False,
+    rounded=False,
+    special_characters=False,
+    precision=3,
+    fontname=""helvetica"",
+):
+
+param: out_file : object or str, default=None
+",Utils,,Behavior
+265,/sklearn/preprocessing/_function_transformer.py,The default of ``validate`` changed from True to False.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/preprocessing/_function_transformer.py#L56,0.22,"class: FunctionTransformer(TransformerMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        func=None,
+        inverse_func=None,
+        *,
+        validate=False,
+        accept_sparse=False,
+        check_inverse=True,
+        feature_names_out=None,
+        kw_args=None,
+        inv_kw_args=None,
+    ):
+
+param: validate : bool, default=False",preprocessing,API simplification,Behavior
+344,/sklearn/preprocessing/_data.py,The default value of the `method` parameter changed from 'box-cox' to 'yeo-johnson' in 0.23.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/preprocessing/_data.py#L3357,0.23,"class: NA
+
+method: power_transform(X, method=""yeo-johnson"", *, standardize=True, copy=True):
+
+param: method : {'yeo-johnson', 'box-cox'}, default='yeo-johnson'",preprocessing,New feature,Behavior
+356,/sklearn/ensemble/_forest.py,The default value of ``n_estimators`` changed from 10 to 100,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L1109,0.22,"class: RandomForestClassifier(ForestClassifier):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""gini"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=""sqrt"",
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=True,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        class_weight=None,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param:  n_estimators : int, default=100",Model Training,Maintainability,Behavior
+359,/sklearn/ensemble/_forest.py,"The default of `max_features` changed from `""auto""` to `""sqrt""`.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L1167,1.1,"class: RandomForestClassifier(ForestClassifier):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""gini"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=""sqrt"",
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=True,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        class_weight=None,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param: max_features : {""sqrt"", ""log2"", None}, int or float, default=""sqrt""",Model Training,Maintainability,Refactoring
+367,/sklearn/ensemble/_forest.py,"The default value of ``n_estimators`` changed from 10 to 100
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L1452,0.22,"class: RandomForestRegressor(ForestRegressor):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""squared_error"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=1.0,
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=True,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param: n_estimators : int, default=100",Model Training,Maintainability,Behavior
+374,/sklearn/ensemble/_forest.py,"The default of `max_features` changed from `""auto""` to 1.0.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L1532,1.1,"class: RandomForestRegressor(ForestRegressor):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""squared_error"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=1.0,
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=True,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param: max_features : {""sqrt"", ""log2"", None}, int or float, default=1.0",Model Training,Maintainability,Refactoring
+382,/sklearn/ensemble/_forest.py,"The default value of ``n_estimators`` changed from 10 to 100
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L1781,0.22,"class: ExtraTreesClassifier(ForestClassifier):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""gini"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=""sqrt"",
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=False,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        class_weight=None,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param: n_estimators : int, default=100",Model Training,Maintainability,Behavior
+385,/sklearn/ensemble/_forest.py,"The default of `max_features` changed from `""auto""` to `""sqrt""`.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L1839,1.1,"class: ExtraTreesClassifier(ForestClassifier):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""gini"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=""sqrt"",
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=False,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        class_weight=None,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param:     max_features : {""sqrt"", ""log2"", None}, int or float, default=""sqrt""",Model Training,Maintainability,Refactoring
+393,/sklearn/ensemble/_forest.py,"The default value of ``n_estimators`` changed from 10 to 100
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L2118,0.22,"class: ExtraTreesRegressor(ForestRegressor):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""squared_error"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=1.0,
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=False,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param: n_estimators : int, default=100",Model Training,Maintainability,Behavior
+399,/sklearn/ensemble/_forest.py,"The default of `max_features` changed from `""auto""` to 1.0.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L2191,1.1,"class: ExtraTreesRegressor(ForestRegressor):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        criterion=""squared_error"",
+        max_depth=None,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_features=1.0,
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        bootstrap=False,
+        oob_score=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+        ccp_alpha=0.0,
+        max_samples=None,
+    ):
+
+param: max_features : {""sqrt"", ""log2"", None}, int or float, default=1.0",Model Training,Maintainability,Refactoring
+407,/sklearn/ensemble/_forest.py,"The default value of ``n_estimators`` changed from 10 to 100
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_forest.py#L2437,0.22,"class: RandomTreesEmbedding(TransformerMixin, BaseForest):
+
+method: __init__(
+        self,
+        n_estimators=100,
+        *,
+        max_depth=5,
+        min_samples_split=2,
+        min_samples_leaf=1,
+        min_weight_fraction_leaf=0.0,
+        max_leaf_nodes=None,
+        min_impurity_decrease=0.0,
+        sparse_output=True,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+    ):
+
+param: n_estimators : int, default=100",Model Training,Maintainability,Behavior
+461,/sklearn/ensemble/_iforest.py,The default value of ``contamination`` changed from 0.1,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/ensemble/_iforest.py#L73,0.22,"class: IsolationForest(OutlierMixin, BaseBagging):
+
+method: __init__(
+        self,
+        *,
+        n_estimators=100,
+        max_samples=""auto"",
+        contamination=""auto"",
+        max_features=1.0,
+        bootstrap=False,
+        n_jobs=None,
+        random_state=None,
+        verbose=0,
+        warm_start=False,
+    ):
+
+param: contamination : 'auto' or float, default='auto'",Model Training,,Behavior
+564,/sklearn/datasets/_openml.py,"The default value of `as_frame` changed from `False` to `'auto'`
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/datasets/_openml.py#L670,0.24,"class: NA
+
+method: fetch_openml(
+    name: Optional[str] = None,
+    *,
+    version: Union[str, int] = ""active"",
+    data_id: Optional[int] = None,
+    data_home: Optional[str] = None,
+    target_column: Optional[Union[str, List]] = ""default-target"",
+    cache: bool = True,
+    return_X_y: bool = False,
+    as_frame: Union[str, bool] = ""auto"",
+    n_retries: int = 3,
+    delay: float = 1.0,
+):
+
+param: as_frame : bool or 'auto', default='auto'",dataset,API simplification,Behavior
+630,/sklearn/svm/_classes.py,The default value of ``gamma`` changed from 'auto' to 'scale'.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L569,0.22,"class: SVC(BaseSVC):
+
+method: __init__(
+        self,
+        *,
+        C=1.0,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        shrinking=True,
+        probability=False,
+        tol=1e-3,
+        cache_size=200,
+        class_weight=None,
+        verbose=False,
+        max_iter=-1,
+        decision_function_shape=""ovr"",
+        break_ties=False,
+        random_state=None,
+    ):
+
+param: gamma : {'scale', 'auto'} or float, default='scale'",Model Training,,Behavior
+631,/sklearn/svm/_classes.py,decision_function_shape is 'ovr' by default.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L617,0.19,"class: SVC(BaseSVC):
+
+method: __init__(
+        self,
+        *,
+        C=1.0,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        shrinking=True,
+        probability=False,
+        tol=1e-3,
+        cache_size=200,
+        class_weight=None,
+        verbose=False,
+        max_iter=-1,
+        decision_function_shape=""ovr"",
+        break_ties=False,
+        random_state=None,
+    ):
+
+param: decision_function_shape : {'ovo', 'ovr'}, default='ovr'",Model Training,Bug fixing,Behavior
+638,/sklearn/svm/_classes.py,The default value of ``gamma`` changed from 'auto' to 'scale'.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L832,0.22,"class: NuSVC(BaseSVC):
+
+method: __init__(
+        self,
+        *,
+        nu=0.5,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        shrinking=True,
+        probability=False,
+        tol=1e-3,
+        cache_size=200,
+        class_weight=None,
+        verbose=False,
+        max_iter=-1,
+        decision_function_shape=""ovr"",
+        break_ties=False,
+        random_state=None,
+    ):
+
+param: gamma : {'scale', 'auto'} or float, default='scale'",Model Training,Bug fixing,Behavior
+639,/sklearn/svm/_classes.py,decision_function_shape is 'ovr' by default.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L878,0.19,"class: NuSVC(BaseSVC):
+
+method: __init__(
+        self,
+        *,
+        nu=0.5,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        shrinking=True,
+        probability=False,
+        tol=1e-3,
+        cache_size=200,
+        class_weight=None,
+        verbose=False,
+        max_iter=-1,
+        decision_function_shape=""ovr"",
+        break_ties=False,
+        random_state=None,
+    ):
+
+param: decision_function_shape : {'ovo', 'ovr'}, default='ovr'",Model Training,,Behavior
+646,/sklearn/svm/_classes.py,The default value of ``gamma`` changed from 'auto' to 'scale'.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L1096,0.22,"class: SVR(RegressorMixin, BaseLibSVM):
+
+method: __init__(
+        self,
+        *,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        tol=1e-3,
+        C=1.0,
+        epsilon=0.1,
+        shrinking=True,
+        cache_size=200,
+        verbose=False,
+        max_iter=-1,
+    ):
+
+param: gamma : {'scale', 'auto'} or float, default='scale'",Model Training,Bug fixing,Behavior
+650,/sklearn/svm/_classes.py,The default value of ``gamma`` changed from 'auto' to 'scale'.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L1299,0.22,"class: NuSVR(RegressorMixin, BaseLibSVM):
+
+method: __init__(
+        self,
+        *,
+        nu=0.5,
+        C=1.0,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        shrinking=True,
+        tol=1e-3,
+        cache_size=200,
+        verbose=False,
+        max_iter=-1,
+    ):
+
+param: gamma : {'scale', 'auto'} or float, default='scale'",Model Training,Bug fixing,Behavior
+654,/sklearn/svm/_classes.py,The default value of ``gamma`` changed from 'auto' to 'scale'.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/svm/_classes.py#L1481,0.22,"class: OneClassSVM(OutlierMixin, BaseLibSVM):
+
+method: __init__(
+        self,
+        *,
+        kernel=""rbf"",
+        degree=3,
+        gamma=""scale"",
+        coef0=0.0,
+        tol=1e-3,
+        nu=0.5,
+        shrinking=True,
+        cache_size=200,
+        verbose=False,
+        max_iter=-1,
+    ):
+
+param: gamma : {'scale', 'auto'} or float, default='scale'",Model Training,Bug fixing,Behavior
+691,/sklearn/cluster/_kmeans.py,"Renamed ""full"" to ""lloyd"", and deprecated ""auto"" and ""full"". Changed ""auto"" to use ""lloyd"" instead of ""elkan"".",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/cluster/_kmeans.py#L355,1.1,"class: NA
+
+method: k_means(
+    X,
+    n_clusters,
+    *,
+    sample_weight=None,
+    init=""k-means++"",
+    n_init=10,
+    max_iter=300,
+    verbose=False,
+    tol=1e-4,
+    random_state=None,
+    copy_x=True,
+    algorithm=""lloyd"",
+    return_n_iter=False,
+):
+
+param: algorithm : {""lloyd"", ""elkan"", ""auto"", ""full""}, default=""lloyd""",Model Training,API simplification,Performance
+693,/sklearn/cluster/_kmeans.py,"Renamed ""full"" to ""lloyd"", and deprecated ""auto"" and ""full"". Changed ""auto"" to use ""lloyd"" instead of ""elkan"".",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/cluster/_kmeans.py#L1202,1.1,"class: KMeans(_BaseKMeans):
+
+method: __init__(
+        self,
+        n_clusters=8,
+        *,
+        init=""k-means++"",
+        n_init=10,
+        max_iter=300,
+        tol=1e-4,
+        verbose=0,
+        random_state=None,
+        copy_x=True,
+        algorithm=""lloyd"",
+    ):
+
+param: algorithm : {""lloyd"", ""elkan"", ""auto"", ""full""}, default=""lloyd""",Model Training,API simplification,Performance
+697,/sklearn/cluster/_kmeans.py,`batch_size` default changed from 100 to 1024.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/cluster/_kmeans.py#L1630,1.0,"class: MiniBatchKMeans(_BaseKMeans):
+
+method: __init__(
+        self,
+        n_clusters=8,
+        *,
+        init=""k-means++"",
+        max_iter=100,
+        batch_size=1024,
+        verbose=0,
+        compute_labels=True,
+        random_state=None,
+        tol=0.0,
+        max_no_improvement=10,
+        init_size=None,
+        n_init=3,
+        reassignment_ratio=0.01,
+    ):
+
+param: batch_size : int, default=1024",Model Training,Bug fixing,Performance
+734,/sklearn/model_selection/_search.py,`n_jobs` default changed from 1 to None,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_search.py#L1074,v0.20,"class: GridSearchCV(BaseSearchCV):
+
+method: __init__(
+        self,
+        estimator,
+        param_grid,
+        *,
+        scoring=None,
+        n_jobs=None,
+        refit=True,
+        cv=None,
+        verbose=0,
+        pre_dispatch=""2*n_jobs"",
+        error_score=np.nan,
+        return_train_score=False,
+    ):
+
+param: n_jobs : int, default=None",Model Training,Maintainability,Performance
+736,/sklearn/model_selection/_search.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_search.py#L1128,0.22,"class: GridSearchCV(BaseSearchCV):
+
+method: __init__(
+        self,
+        estimator,
+        param_distributions,
+        *,
+        n_iter=10,
+        scoring=None,
+        n_jobs=None,
+        refit=True,
+        cv=None,
+        verbose=0,
+        pre_dispatch=""2*n_jobs"",
+        random_state=None,
+        error_score=np.nan,
+        return_train_score=False,
+    ):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+738,/sklearn/model_selection/_search.py,Default value was changed from ``True`` to ``False``,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_search.py#L1174,0.21,"class: GridSearchCV(BaseSearchCV):
+
+method: __init__(
+        self,
+        estimator,
+        param_grid,
+        *,
+        scoring=None,
+        n_jobs=None,
+        refit=True,
+        cv=None,
+        verbose=0,
+        pre_dispatch=""2*n_jobs"",
+        error_score=np.nan,
+        return_train_score=False,
+    ):
+
+param: return_train_score : bool, default=False",Model Evaluation,Maintainability,Behavior
+743,/sklearn/model_selection/_search.py,`n_jobs` default changed from 1 to None,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_search.py#L1454,v0.20,"class: RandomizedSearchCV(BaseSearchCV):
+
+method: __init__(
+        self,
+        estimator,
+        param_distributions,
+        *,
+        n_iter=10,
+        scoring=None,
+        n_jobs=None,
+        refit=True,
+        cv=None,
+        verbose=0,
+        pre_dispatch=""2*n_jobs"",
+        random_state=None,
+        error_score=np.nan,
+        return_train_score=False,
+    ):
+
+param: n_jobs : int, default=None",Model Training,Maintainability,Performance
+745,/sklearn/model_selection/_search.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_search.py#L1504,0.22,"class: RandomizedSearchCV(BaseSearchCV):
+
+method: __init__(
+        self,
+        estimator,
+        param_distributions,
+        *,
+        n_iter=10,
+        scoring=None,
+        n_jobs=None,
+        refit=True,
+        cv=None,
+        verbose=0,
+        pre_dispatch=""2*n_jobs"",
+        random_state=None,
+        error_score=np.nan,
+        return_train_score=False,
+    ):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+747,/sklearn/model_selection/_search.py,Default value was changed from ``True`` to ``False``,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_search.py#L1551,0.21,"class: RandomizedSearchCV(BaseSearchCV):
+
+method: __init__(
+        self,
+        estimator,
+        param_distributions,
+        *,
+        n_iter=10,
+        scoring=None,
+        n_jobs=None,
+        refit=True,
+        cv=None,
+        verbose=0,
+        pre_dispatch=""2*n_jobs"",
+        random_state=None,
+        error_score=np.nan,
+        return_train_score=False,
+    ):
+
+param: return_train_score : bool, default=False",Model Evaluation,Maintainability,Behavior
+751,/sklearn/model_selection/_split.py,``n_splits`` default value changed from 3 to 5.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_split.py#L381,0.22,"class: KFold(_BaseKFold):
+
+method: __init__(self, n_splits=5, *, shuffle=False, random_state=None):
+
+param: n_splits : int, default=5",Model Evaluation,Maintainability,Behavior
+752,/sklearn/model_selection/_split.py,``n_splits`` default value changed from 3 to 5.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_split.py#L469,0.22,"class: GroupKFold(_BaseKFold):
+
+method: __init__(self, n_splits=5):
+
+param: n_splits : int, default=5",Model Evaluation,Maintainability,Behavior
+753,/sklearn/model_selection/_split.py,``n_splits`` default value changed from 3 to 5.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_split.py#L597,0.22,"class: StratifiedKFold(_BaseKFold):
+
+method: __init__(self, n_splits=5, *, shuffle=False, random_state=None):
+
+param: n_splits : int, default=5",Model Evaluation,Maintainability,Behavior
+756,/sklearn/model_selection/_split.py,``n_splits`` default value changed from 3 to 5.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_split.py#L977,0.22,"class: TimeSeriesSplit(_BaseKFold):
+
+method: __init__(self, n_splits=5, *, max_train_size=None, test_size=None, gap=0):
+
+param: n_splits : int, default=5",Model Evaluation,Maintainability,Behavior
+760,/sklearn/model_selection/_split.py,``cv`` default value changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_split.py#L2310,0.22,"class: NA
+
+method: check_cv(cv=5, y=None, *, classifier=False):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+766,/sklearn/model_selection/_validation.py,``cv`` default value changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L121,0.22,"class: NA
+
+method: cross_validate(
+    estimator,
+    X,
+    y=None,
+    *,
+    groups=None,
+    scoring=None,
+    cv=None,
+    n_jobs=None,
+    verbose=0,
+    fit_params=None,
+    pre_dispatch=""2*n_jobs"",
+    return_train_score=False,
+    return_estimator=False,
+    error_score=np.nan,
+):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+768,/sklearn/model_selection/_validation.py,Default value was changed from ``True`` to ``False``,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L164,0.21,"class: NA
+method: def cross_validate(
+    estimator,
+    X,
+    y=None,
+    *,
+    groups=None,
+    scoring=None,
+    cv=None,
+    n_jobs=None,
+    verbose=0,
+    fit_params=None,
+    pre_dispatch=""2*n_jobs"",
+    return_train_score=False,
+    return_estimator=False,
+    error_score=np.nan,
+):
+
+param: return_train_score : bool, default=False",Model Evaluation,Maintainability,Behavior
+771,/sklearn/model_selection/_validation.py,`cv` default value if `None` changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L445,0.22,"class: NA
+
+method: cross_val_score(
+    estimator,
+    X,
+    y=None,
+    *,
+    groups=None,
+    scoring=None,
+    cv=None,
+    n_jobs=None,
+    verbose=0,
+    fit_params=None,
+    pre_dispatch=""2*n_jobs"",
+    error_score=np.nan,
+):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+773,/sklearn/model_selection/_validation.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L864,0.22,"class: NA
+
+method: cross_val_predict(
+    estimator,
+    X,
+    y=None,
+    *,
+    groups=None,
+    cv=None,
+    n_jobs=None,
+    verbose=0,
+    fit_params=None,
+    pre_dispatch=""2*n_jobs"",
+    method=""predict"",
+):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+775,/sklearn/model_selection/_validation.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L1238,0.22,"class: NA
+
+method: permutation_test_score(
+    estimator,
+    X,
+    y,
+    *,
+    groups=None,
+    cv=None,
+    n_permutations=100,
+    n_jobs=None,
+    random_state=0,
+    verbose=0,
+    scoring=None,
+    fit_params=None,
+):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+777,/sklearn/model_selection/_validation.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L1427,0.22,"class: NA
+
+method: def learning_curve(
+    estimator,
+    X,
+    y,
+    *,
+    groups=None,
+    train_sizes=np.linspace(0.1, 1.0, 5),
+    cv=None,
+    scoring=None,
+    exploit_incremental_learning=False,
+    n_jobs=None,
+    pre_dispatch=""all"",
+    verbose=0,
+    shuffle=False,
+    random_state=None,
+    error_score=np.nan,
+    return_times=False,
+    fit_params=None,
+):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Evaluation,Maintainability,Behavior
+780,/sklearn/model_selection/_validation.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/model_selection/_validation.py#L1783,0.22,"class: NA
+
+method: validation_curve(
+    estimator,
+    X,
+    y,
+    *,
+    param_name,
+    param_range,
+    groups=None,
+    cv=None,
+    scoring=None,
+    n_jobs=None,
+    pre_dispatch=""all"",
+    verbose=0,
+    error_score=np.nan,
+    fit_params=None,
+):
+
+param: cv : default value if None changed from 3-fold to 5-fold.",Model Evaluation,Maintainability,Behavior
+802,/sklearn/metrics/_regression.py,Default value of multioutput is 'uniform_average'.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/metrics/_regression.py#L841,0.19,"class: NA 
+
+method: def r2_score(
+    y_true,
+    y_pred,
+    *,
+    sample_weight=None,
+    multioutput=""uniform_average"",
+    force_finite=True,
+):
+
+param: multioutput : {'raw_values', 'uniform_average', 'variance_weighted'}, array-like of shape (n_outputs,) or None, default='uniform_average'",Model Evaluation,,Behavior
+820,/sklearn/metrics/cluster/_supervised.py,The default value of ``average_method`` changed from 'max' to,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/metrics/cluster/_supervised.py#L867,0.22,"class: NA
+
+method: def adjusted_mutual_info_score(labels_true, labels_pred, *, average_method=""arithmetic""):
+
+param: average_method : str, default='arithmetic'",Model Evaluation,,Behavior
+822,/sklearn/metrics/cluster/_supervised.py,The default value of ``average_method`` changed from 'geometric' to,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/metrics/cluster/_supervised.py#L990,0.22,"class: NA
+
+method: def normalized_mutual_info_score(
+    labels_true, labels_pred, *, average_method=""arithmetic""
+):
+
+param: average_method : str, default='arithmetic'",Model Evaluation,,Behavior
+887,/sklearn/decomposition/_lda.py,"The default learning method is now ``""batch""``.",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/decomposition/_lda.py#L185,0.20,"class: LatentDirichletAllocation(
+    _ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstimator
+):
+
+method: __init__(
+        self,
+        n_components=10,
+        *,
+        doc_topic_prior=None,
+        topic_word_prior=None,
+        learning_method=""batch"",
+        learning_decay=0.7,
+        learning_offset=10.0,
+        max_iter=10,
+        batch_size=128,
+        evaluate_every=-1,
+        total_samples=1e6,
+        perp_tol=1e-1,
+        mean_change_tol=1e-3,
+        max_doc_update_iter=100,
+        n_jobs=None,
+        verbose=0,
+        random_state=None,
+    ):
+
+param: learning_method : {'batch', 'online'}, default='batch'",Data Decomposition,,Behavior
+905,/sklearn/decomposition/_nmf.py,"When `init=None` and n_components is less than n_samples and n_features
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/decomposition/_nmf.py#L271,1.1,"class: NA
+
+method: def _initialize_nmf(X, n_components, init=None, eps=1e-6, random_state=None):
+
+param: init :  {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}, default=None",Data Decomposition,,Behavior
+906,/sklearn/decomposition/_nmf.py,The default value of `init` changed from 'random' to None in 0.23.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/decomposition/_nmf.py#L1012,0.23,"class: NA
+
+method: def non_negative_factorization(
+    X,
+    W=None,
+    H=None,
+    n_components=None,
+    *,
+    init=None,
+    update_H=True,
+    solver=""cd"",
+    beta_loss=""frobenius"",
+    tol=1e-4,
+    max_iter=200,
+    alpha=""deprecated"",
+    alpha_W=0.0,
+    alpha_H=""same"",
+    l1_ratio=0.0,
+    regularization=""deprecated"",
+    random_state=None,
+    verbose=0,
+    shuffle=False,
+):
+
+param: init : {'random', 'nndsvd', 'nndsvda', 'nndsvdar', 'custom'}, default=None",Data Decomposition,,Behavior
+907,/sklearn/decomposition/_nmf.py,"When `init=None` and n_components is less than n_samples and n_features
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/decomposition/_nmf.py#L1015,1.1,"class: NA
+
+method: def non_negative_factorization(
+    X,
+    W=None,
+    H=None,
+    n_components=None,
+    *,
+    init=None,
+    update_H=True,
+    solver=""cd"",
+    beta_loss=""frobenius"",
+    tol=1e-4,
+    max_iter=200,
+    alpha=""deprecated"",
+    alpha_W=0.0,
+    alpha_H=""same"",
+    l1_ratio=0.0,
+    regularization=""deprecated"",
+    random_state=None,
+    verbose=0,
+    shuffle=False,
+):
+
+param: init : {'random', 'nndsvd', 'nndsvda', 'nndsvdar', 'custom'}, default=None",Data Decomposition,,Behavior
+915,/sklearn/decomposition/_nmf.py,"When `init=None` and n_components is less than n_samples and n_features
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/decomposition/_nmf.py#L1231,1.1,"class: NMF(_ClassNamePrefixFeaturesOutMixin, TransformerMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        n_components=None,
+        *,
+        init=None,
+        solver=""cd"",
+        beta_loss=""frobenius"",
+        tol=1e-4,
+        max_iter=200,
+        random_state=None,
+        alpha=""deprecated"",
+        alpha_W=0.0,
+        alpha_H=""same"",
+        l1_ratio=0.0,
+        verbose=0,
+        shuffle=False,
+        regularization=""deprecated"",
+    ):
+
+param: init : {'random', 'nndsvd', 'nndsvda', 'nndsvdar', 'custom'}, default=None",Data Decomposition,,Behavior
+1026,/sklearn/feature_selection/_rfe.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/feature_selection/_rfe.py#L497,0.22,"class: RFECV(RFE):
+
+method: __init__(
+        self,
+        estimator,
+        *,
+        step=1,
+        min_features_to_select=1,
+        cv=None,
+        scoring=None,
+        verbose=0,
+        n_jobs=None,
+        importance_getter=""auto"",
+    ):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Feature Processing,Maintainability,Behavior
+1056,/sklearn/linear_model/_coordinate_descent.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_coordinate_descent.py#L1869,0.22,"class: LassoCV(RegressorMixin, LinearModelCV):
+
+method: __init__(
+        self,
+        *,
+        eps=1e-3,
+        n_alphas=100,
+        alphas=None,
+        fit_intercept=True,
+        normalize=""deprecated"",
+        precompute=""auto"",
+        max_iter=1000,
+        tol=1e-4,
+        copy_X=True,
+        cv=None,
+        verbose=False,
+        n_jobs=None,
+        positive=False,
+        random_state=None,
+        selection=""cyclic"",
+    ):
+
+param: cv : int, cross-validation generator or an iterable, default=None",Model Training,Maintainability,Behavior
+1060,/sklearn/linear_model/_coordinate_descent.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_coordinate_descent.py#L2094,0.22,"class: ElasticNetCV(RegressorMixin, LinearModelCV):
+
+method: __init__(
+        self,
+        *,
+        l1_ratio=0.5,
+        eps=1e-3,
+        n_alphas=100,
+        alphas=None,
+        fit_intercept=True,
+        normalize=""deprecated"",
+        precompute=""auto"",
+        max_iter=1000,
+        tol=1e-4,
+        cv=None,
+        copy_X=True,
+        verbose=0,
+        n_jobs=None,
+        positive=False,
+        random_state=None,
+        selection=""cyclic"",
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Model Training,Maintainability,Behavior
+1071,/sklearn/linear_model/_coordinate_descent.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_coordinate_descent.py#L2765,0.22,"class: MultiTaskElasticNetCV(RegressorMixin, LinearModelCV):
+
+method: __init__(
+        self,
+        *,
+        l1_ratio=0.5,
+        eps=1e-3,
+        n_alphas=100,
+        alphas=None,
+        fit_intercept=True,
+        normalize=""deprecated"",
+        max_iter=1000,
+        tol=1e-4,
+        cv=None,
+        copy_X=True,
+        verbose=0,
+        n_jobs=None,
+        random_state=None,
+        selection=""cyclic"",
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Model Training,Maintainability,Behavior
+1076,/sklearn/linear_model/_coordinate_descent.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_coordinate_descent.py#L3006,0.22,"class: MultiTaskLassoCV(RegressorMixin, LinearModelCV):
+
+method: __init__(
+        self,
+        *,
+        eps=1e-3,
+        n_alphas=100,
+        alphas=None,
+        fit_intercept=True,
+        normalize=""deprecated"",
+        max_iter=1000,
+        tol=1e-4,
+        copy_X=True,
+        cv=None,
+        verbose=False,
+        n_jobs=None,
+        random_state=None,
+        selection=""cyclic"",
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Model Training,Maintainability,Behavior
+1122,/sklearn/linear_model/_least_angle.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_least_angle.py#L1523,0.22,"class: LarsCV(Lars):
+
+method: __init__(
+        self,
+        *,
+        fit_intercept=True,
+        verbose=False,
+        max_iter=500,
+        normalize=""deprecated"",
+        precompute=""auto"",
+        cv=None,
+        max_n_alphas=1000,
+        n_jobs=None,
+        eps=np.finfo(float).eps,
+        copy_X=True,
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Model Training,Maintainability,Behavior
+1126,/sklearn/linear_model/_least_angle.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_least_angle.py#L1813,0.22,"class: LassoLarsCV(LarsCV):
+
+method: __init__(
+        self,
+        *,
+        fit_intercept=True,
+        verbose=False,
+        max_iter=500,
+        normalize=""deprecated"",
+        precompute=""auto"",
+        cv=None,
+        max_n_alphas=1000,
+        n_jobs=None,
+        eps=np.finfo(float).eps,
+        copy_X=True,
+        positive=False,
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Model Training,Maintainability,Behavior
+1141,/sklearn/linear_model/_omp.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_omp.py#L916,0.22,"class: OrthogonalMatchingPursuitCV(RegressorMixin, LinearModel):
+
+method: __init__(
+        self,
+        *,
+        copy=True,
+        fit_intercept=True,
+        normalize=""deprecated"",
+        max_iter=None,
+        cv=None,
+        n_jobs=None,
+        verbose=False,
+    ):
+
+param: cv : int, cross-validation generator or iterable, default=None",Model Training,Maintainability,Behavior
+1185,/sklearn/linear_model/_logistic.py,Default changed from 'ovr' to 'auto' in 0.22.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_logistic.py#L221,0.22,"class: NA
+
+method: def _logistic_regression_path(
+    X,
+    y,
+    pos_class=None,
+    Cs=10,
+    fit_intercept=True,
+    max_iter=100,
+    tol=1e-4,
+    verbose=0,
+    solver=""lbfgs"",
+    coef=None,
+    class_weight=None,
+    dual=False,
+    penalty=""l2"",
+    intercept_scaling=1.0,
+    multi_class=""auto"",
+    random_state=None,
+    check_input=True,
+    max_squared_sum=None,
+    sample_weight=None,
+    l1_ratio=None,
+    n_threads=1,
+):
+
+param: multi_class: : {'ovr', 'multinomial', 'auto'}, default='auto'",Model Training,Maintainability,Behavior
+1191,/sklearn/linear_model/_logistic.py,The default solver changed from 'liblinear' to 'lbfgs' in 0.22.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_logistic.py#L882,0.22,"class: LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        penalty=""l2"",
+        *,
+        dual=False,
+        tol=1e-4,
+        C=1.0,
+        fit_intercept=True,
+        intercept_scaling=1,
+        class_weight=None,
+        random_state=None,
+        solver=""lbfgs"",
+        max_iter=100,
+        multi_class=""auto"",
+        verbose=0,
+        warm_start=False,
+        n_jobs=None,
+        l1_ratio=None,
+    ):
+
+param: solver : {'newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'}, \
+            default='lbfgs'",Model Training,Maintainability,Behavior
+1193,/sklearn/linear_model/_logistic.py,Default changed from 'ovr' to 'auto' in 0.22.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_logistic.py#L898,0.22,"class: LogisticRegression(LinearClassifierMixin, SparseCoefMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        penalty=""l2"",
+        *,
+        dual=False,
+        tol=1e-4,
+        C=1.0,
+        fit_intercept=True,
+        intercept_scaling=1,
+        class_weight=None,
+        random_state=None,
+        solver=""lbfgs"",
+        max_iter=100,
+        multi_class=""auto"",
+        verbose=0,
+        warm_start=False,
+        n_jobs=None,
+        l1_ratio=None,
+    ):
+
+param: multi_class: : {'auto', 'ovr', 'multinomial'}, default='auto'",Model Training,Maintainability,Behavior
+1199,/sklearn/linear_model/_logistic.py,``cv`` default value if None changed from 3-fold to 5-fold.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_logistic.py#L1382,0.22,"class: LogisticRegressionCV(LogisticRegression, LinearClassifierMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        *,
+        Cs=10,
+        fit_intercept=True,
+        cv=None,
+        dual=False,
+        penalty=""l2"",
+        scoring=None,
+        solver=""lbfgs"",
+        tol=1e-4,
+        max_iter=100,
+        class_weight=None,
+        n_jobs=None,
+        verbose=0,
+        refit=True,
+        intercept_scaling=1.0,
+        multi_class=""auto"",
+        random_state=None,
+        l1_ratios=None,
+    ):
+
+param: cv : int or cross-validation generator, default=None",Model Training,Maintainability,Behavior
+1204,/sklearn/linear_model/_logistic.py,Default changed from 'ovr' to 'auto' in 0.22.,https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/linear_model/_logistic.py#L1502,0.22,"class: LogisticRegressionCV(LogisticRegression, LinearClassifierMixin, BaseEstimator):
+
+method: __init__(
+        self,
+        *,
+        Cs=10,
+        fit_intercept=True,
+        cv=None,
+        dual=False,
+        penalty=""l2"",
+        scoring=None,
+        solver=""lbfgs"",
+        tol=1e-4,
+        max_iter=100,
+        class_weight=None,
+        n_jobs=None,
+        verbose=0,
+        refit=True,
+        intercept_scaling=1.0,
+        multi_class=""auto"",
+        random_state=None,
+        l1_ratios=None,
+    ):
+
+param: multi_class: : {'auto', 'ovr', 'multinomial'}, default='auto'",Model Training,Maintainability,Behavior
+1269,/sklearn/neighbors/_lof.py,"The default value of ``contamination`` changed from 0.1
+",https://github.com/scikit-learn/scikit-learn/blob/1.1.2/sklearn/neighbors/_lof.py#L96,0.22,"class: LocalOutlierFactor(KNeighborsMixin, OutlierMixin, NeighborsBase):
+
+method: __init__(
+        self,
+        n_neighbors=20,
+        *,
+        algorithm=""auto"",
+        leaf_size=30,
+        metric=""minkowski"",
+        p=2,
+        metric_params=None,
+        contamination=""auto"",
+        novelty=False,
+        n_jobs=None,
+    ):
+
+param: contamination : 'auto' or float, default='auto'
+
+",Model Training,,Behavior

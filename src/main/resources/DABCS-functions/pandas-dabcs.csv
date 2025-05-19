@@ -1,0 +1,176 @@
+id,path,dabc_msg,dabc_url,version,fqn,dabc_module,reason,effect
+1,/pandas/core/frame.py,"Default value is changed to ``True``. Google has deprecated the ``auth_local_webserver = False`` `""out of band"" (copy-paste) flow <https://developers.googleblog.com/2022/02/making-oauth-flows-safer.html?m=1#disallowed-oob>`_.",https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/frame.py#L2128,1.5.2000,"class: DataFrame(NDFrame, OpsMixin)
+
+method: def to_gbq(
+        self,
+        destination_table,
+        project_id = None,
+        chunksize = None,
+        reauth = False,
+        if_exists = ""fail"",
+        auth_local_webserver = True,
+        table_schema = None,
+        location = None,
+        progress_bar = True,
+        credentials=None,
+    )
+
+param: auth_local_webserver : bool, default True",DataFrame,API Simplification,Behaviour
+2,/pandas/io/gbq.py,"Default value is changed to ``True``. Google has deprecated the ``auth_local_webserver = False`` `""out of band"" (copy-paste) flow <https://developers.googleblog.com/2022/02/making-oauth-flows-safer.html?m=1#disallowed-oob>`_.",https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/io/gbq.py#L77,1.5.2000,"class: NA
+
+method: def read_gbq(
+        query,
+        project_id = None,
+        index_col = None,
+        col_order = None,
+        reauth = False,
+        auth_local_webserver = True,
+        dialect = None,
+        location = None,
+        configuration = None,
+        credentials=None,
+        use_bqstorage_api = None,
+        max_results = None,
+        progress_bar_type = None,
+    )
+
+param: auth_local_webserver : bool, default True",Input/Output,New Feature,Behaviour
+3,/pandas/core/reshape/concat.py,Changed to not sort by default. ,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/reshape/concat.py#L202,1.0.0,"class: NA
+
+method: def concat(
+        objs,
+        axis = 0,
+        join = ""outer"",
+        ignore_index = False,
+        keys=None,
+        levels=None,
+        names=None,
+        verify_integrity = False,
+        sort = False,
+        copy = True,
+    )
+
+param: sort : bool, default False",General Functions,,Aesthetics
+4,/pandas/core/frame.py,Changed to not sort by default.,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/frame.py#L9685,1.0.0,"class: DataFrame(NDFrame, OpsMixin)
+
+method: def append(
+        self,
+        other,
+        ignore_index = False,
+        verify_integrity = False,
+        sort = False,
+    )
+
+param: sort : bool, default False",DataFrame,Maintainability,Aesthetics
+5,/pandas/io/json/_json.py,Not applicable for ``orient='table'``.,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/io/json/_json.py#L555,0.25.0,"class: NA
+
+method: def read_json(
+        path_or_buf,
+        orient = None,
+        typ = ""frame"",
+        dtype = None,
+        convert_axes=None,
+        convert_dates = True,
+        keep_default_dates = True,
+        numpy = False,
+        precise_float = False,
+        date_unit = None,
+        encoding = None,
+        encoding_errors = ""strict"",
+        lines = False,
+        chunksize = None,
+        compression = ""infer"",
+        nrows = None,
+        storage_options = None,
+    )
+
+param: convert_axes : bool, default None",Input/Output,Maintainability,Aesthetics
+6,/pandas/core/indexes/datetimes.py,"The default value is now True.  In a future version, this keyword will be removed entirely.  Stop passing the argument to obtain the future behavior and silence the warning.",https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/indexes/datetimes.py#L538,1.0.0,"class: DatetimeIndex(DatetimeTimedeltaMixin)
+
+method: def to_series(self, keep_tz=lib.no_default, index=None, name=None)
+
+param: keep_tz : optional, defaults True",Index Objects,API Simplification,Aesthetics
+7,/pandas/io/formats/style.py,NA,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/io/formats/style.py#L3274,1.4.2000,"class: Styler(StylerRenderer)
+
+method: def bar(
+        self,
+        subset = None,
+        axis = 0,
+        *,
+        color = None,
+        cmap = None,
+        width = 100,
+        height = 100,
+        align = ""mid"",
+        vmin = None,
+        vmax = None,
+        props = ""width: 10em;"",
+    )
+
+param: align : str, int, float, callable, default 'mid'",Style,API Simplification,Aesthetics
+8,/pandas/io/formats/style.py,NA,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/io/formats/style.py#L707,1.4.2000,"class: Styler(StylerRenderer)
+
+method: def to_latex(
+        self,
+        buf = None,
+        *,
+        column_format = None,
+        position = None,
+        position_float = None,
+        hrules = None,
+        clines = None,
+        label = None,
+        caption = None,
+        sparse_index = None,
+        sparse_columns = None,
+        multirow_align = None,
+        multicol_align = None,
+        siunitx = False,
+        environment = None,
+        encoding = None,
+        convert_css = False,
+    )
+
+param: hrules : bool",Style,,Behaviour
+9,/pandas/core/series.py,NA,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/series.py#L5590,1.3.2000,"class: Series(base.IndexOpsMixin, NDFrame)
+
+method: def between(
+        self,
+        left,
+        right,
+        inclusive = ""both"",
+    )
+
+param: inclusive : {""both"", ""neither"", ""left"", ""right""}",Series,API Simplification,Behaviour
+10,/pandas/core/tools/datetimes.py,changed default value from :const:`False` to :const:`True`.,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/tools/datetimes.py#L819,0.25.0,"class: NA
+
+method: def to_datetime(
+    arg,
+    errors = ""raise"",
+    dayfirst = False,
+    yearfirst = False,
+    utc = None,
+    format = None,
+    exact = True,
+    unit = None,
+    infer_datetime_format = False,
+    origin=""unix"",
+    cache = True,
+)
+
+param: cache : bool, default True",General Functions,Maintainability,Performance
+11,/pandas/core/generic.py,raises ValueError if `limit_direction` is 'forward' or 'both' and method is 'backfill' or 'bfill'. raises ValueError if `limit_direction` is 'backward' or 'both' and method is 'pad' or 'ffill'.,https://github.com/pandas-dev/pandas/blob/v1.5.3/pandas/core/generic.py#L7356,1.1.2000,"class: NDFrame(PandasObject, indexing.IndexingMixin)
+
+method: def interpolate(
+        self,
+        method = ""linear"",
+        axis = 0,
+        limit = None,
+        inplace = False,
+        limit_direction = None,
+        limit_area = None,
+        downcast = None,
+        **kwargs,
+    )
+
+param: limit_direction : {{'forward', 'backward', 'both'}}, Optional",DataFrame,Bug Fixing,Behaviour

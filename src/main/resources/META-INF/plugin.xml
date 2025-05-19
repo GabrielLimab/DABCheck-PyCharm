@@ -1,0 +1,17 @@
+<idea-plugin>
+    <id>com.example.plugin.methodhighlighter</id>
+    <name>Method Highlighter</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="https://yourcompany.com">Your Company</vendor>
+
+    <description>
+        This plugin dynamically highlights methods in Python files and provides tooltips when hovering over gutter icons.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <editorFactoryListener implementation="com.example.plugin.MethodHighlighter"/>
+    </extensions>
+</idea-plugin>
