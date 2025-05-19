@@ -1,4 +1,0 @@
-print
-len
-range
-my_function
